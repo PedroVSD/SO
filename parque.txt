@@ -1,0 +1,23 @@
+int catraca = 0
+int contador-tot = 0
+MUTEX mutex-catraca
+int catracaVerifica = verificaCatraca(catraca)
+
+função verificaCatraca(catraca){
+    Espera mutex-entrada
+    catraca += 1
+    se(catraca == 0){
+        libera acesso catraca
+        contador-tot++
+    }
+    Libera catraca
+
+    Espera mutex-saida
+    catraca -=1
+    se(catraca == 0){
+        libera acesso catraca
+        contador-tot--
+    }
+
+    retorna contador-tot
+}
