@@ -69,7 +69,7 @@ def gerar_graficos_trace_cmd(eventos_por_cpu):
         plt.plot(tempos_inicio, label=f"CPU {cpu}", color='blue', marker='x')
 
         plt.title(f"Tempos de Escalonamento de Processos na CPU {cpu}")
-        plt.xlabel("Tempo (segundos)")
+        plt.xlabel("Tempo (ms)")
         plt.ylabel("Índice do Evento")
         plt.legend()
         plt.grid(True)
